@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tíc tắc Toe</title>
+</head>
+<body>
+<button onclick="showTichtactoe()">Hiển thị bàn cờ</button>
+<div id="tichtactoe"></div>
+<script>
+    //In ra bàn cờ theo dấu .
+    let tichtactoe = [[".",".",".",".",".",],
+        [".",".",".",".",".",],
+        [".",".",".",".",".",],
+        [".",".",".",".",".",],
+        [".",".",".",".",".",]]
+    function showTichtactoe(){
+        let data="";
+        for (let i=0; i<5; i++){
+            data+= "<br/>";
+            for (let j=0; j<5; j++){
+                data+= tichtactoe[i][j] +"&ensp;";
+            }
+        }
+        data+= "<button onclick=\"changeValue()\">Thay đổi</button>"
+        document.getElementById("tichtactoe").innerHTML= data;
+    }
+    let flag = true;
+    function changeValue() {
+        let x = Number(prompt("Nhap x"));
+        let y = Number(prompt("Nhap y"));
+        if (flag){
+            tichtactoe[x][y] = "X";
+        }else
+            tichtactoe[x][y] = "O";
+        showTichtactoe();
+        flag = !flag;
+    }
+</script>
+</body>
+</html>
