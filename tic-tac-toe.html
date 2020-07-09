@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="css.css">
+    <script src="js.js"></script>
+
+</head>
+<body>
+<div class = "table-container">
+    <p style="text-align: center">Player <span id="player">X</span>'s player turn</p>
+    <table align="center">
+        <tr>
+            <td class="box" id="0" onclick="AddVal(0)"></td>
+            <td class="box" id="1" onclick="AddVal(1)"></td>
+            <td class="box" id="2" onclick="AddVal(2)"></td>
+        </tr>
+        <tr>
+            <td class="box" id="3" onclick="AddVal(3)"></td>
+            <td class="box" id="4" onclick="AddVal(4)"></td>
+            <td class="box" id="5" onclick="AddVal(5)"></td>
+        </tr>
+        <tr>
+            <td class="box" id="6" onclick="AddVal(6)"></td>
+            <td class="box" id="7" onclick="AddVal(7)"></td>
+            <td class="box" id="8" onclick="AddVal(8)"></td>
+        </tr>
+    </table>
+
+    <input type="reset" id="restartButton" value="Start" onclick="startGame()">
+
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><h2 id="message">Player <span id="winner"></span> Wins</h2></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" onclick="reSet()">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Game Over
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="reSet()">Close</button>
+                <button type="button" class="btn btn-primary" onclick="reSet()">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
